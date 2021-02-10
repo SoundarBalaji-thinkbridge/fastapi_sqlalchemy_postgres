@@ -38,7 +38,7 @@ def json_values(csvfilepath=r'UsersData.csv', db: Session = Depends(get_db)):
 async def json_display(json1=Depends(json_values)):
     jsonvalues = json.dumps(json1)
     jsonvaluesloaded = json.loads(jsonvalues)
-    return jsonvaluesloaded
+    return jsonvalues
 
 
 @app.get('/post/')
